@@ -1,0 +1,21 @@
+#cloud-config
+---
+packages:
+  - httpd
+  - php
+  - php-mysqlnd
+  - mariadb105-server
+  - wget
+  - unzip
+
+runcmd:
+  - systemctl enable mariadb
+  - systemctl start mariadb
+  - systemctl enable httpd
+  - systemctl start httpd
+  - cd /var/www/html
+  - wget https://wordpress.org/latest.tar.gz
+  - tar -xzf latest.tar.gz
+  - cp -r wordpress/* .
+  - rm -rf wordpress latest.tar.gz
+  - chown -R apache:apache /var/www/html

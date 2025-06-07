@@ -1,0 +1,31 @@
+# AWS credentials and keys
+*.pem
+*.key
+ubuntu-2025.pem
+.env
+.aws/
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Log files
+*.log
+
+# Backup files
+*~
+*.bak
+*.backup
